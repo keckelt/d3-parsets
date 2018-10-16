@@ -111,12 +111,12 @@
               });
           dEnter.append("rect")
               .attr("width", width)
-              .attr("y", -45)
+              .attr("y", 0) // 0 instead of 45
               .attr("height", 45);
-          var textEnter = dEnter.append("text")
+          var textEnter = dEnter.append("text") //Category
               .attr("class", "dimension")
-              .attr("transform", "translate(0,-25)");
-          textEnter.append("tspan")
+              .attr("transform", "translate(0,25)");
+          textEnter.append("tspan") // Attribute
               .attr("class", "name")
               .text(dimensionFormatName);
           textEnter.append("tspan")
@@ -341,11 +341,11 @@
 
           categoryEnter.append("rect")
               .attr("width", function(d) { return d.dx; })
-              .attr("y", -20)
+              .attr("y", 0) // instead of -20
               .attr("height", 20);
           categoryEnter.append("line")
               .style("stroke-width", 2);
-          categoryEnter.append("text")
+          categoryEnter.append("text") // category
               .attr("dy", "-.3em");
           category.select("rect")
               .attr("width", function(d) { return d.dx; })
@@ -410,7 +410,7 @@
 
     parsets.tooltip = function(_) {
       if (!arguments.length) return tooltip;
-      tooltip_ = _ == null ? defaultTooltip : _;
+      tooltip = _ == null ? defaultTooltip : _;
       return parsets;
     };
 
